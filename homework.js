@@ -6,14 +6,91 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
-// 2. Revisit your "remove" function. Make sure that it does not change the original
+    // function remove (memberList, member) {
+    //     let memberIndex = memberList.indexOf(member);
+    //     if (memberList.includes(member)) {
+    //         memberList.splice(memberIndex, 1);
+    //     } else {
+    //         return memberList;
+    //     }
+    //     return memberList;
+    // }
+
+// function remove (memberList, member) {
+//     for (i = 0; i < memberList.length; i++) {
+//         if (memberList[i] == member) {
+//             memberList.splice(memberList.indexOf(member), 1);
+//     }
+//     return memberList
+//     }
+// }
+
+function remove (memberList, member) {
+    for (let i = 0; i < memberList.length; i++) {
+        if (memberList[i] == member) {
+            memberList.splice(i, 1);
+        }
+    }     
+    return memberList;
+} 
+    // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
 
+function remove (memberList, member) {
+    if (memberList.includes(member)) {
+        let newList = memberList.slice();
+        for (let i = 0; i < newList.length; i++) {
+                if (newList[i] == member) {
+                    newList.splice(i, 1);
+            } 
+        }
+        return newList;
+    } else {
+        return memberList;
+    }    
+} 
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(array) {
+    let total = 0
+    for (let i = 0; i < array.length; i ++) {
+        total += array[i]
+    }
+    return total;
+}
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
+// function average (array) {
+//     total = sum(array);
+//     average = total/array.length;
+//     return average;
+// }
+
+// function average(array) {
+//     let total = 0
+//     if (array.length > 0) {
+//         for (let i = 0; i < array.length; i ++) {
+//         total += array[i]
+//         let boop = total/array.length;
+//         return boop;
+//         }
+//     } else {
+//         let boop = NaN;
+//         return boop;
+//     } 
+// }
+function average(array) {
+    let total = 0
+    if (array.length > 0) {
+    for (let i = 0; i < array.length; i ++) {
+        total += array[i]
+    }
+    return total/array.length;
+    }
+}
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
