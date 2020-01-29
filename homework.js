@@ -166,9 +166,17 @@ function selectionSort(array) {
 
 
 function textList (array) {
-    let string= ""
-    if (array.length)
-    for (let i = 0; i < array.length; i++)
-        string += array[i] + ","
-        return string;
+    let string= "";
+    if (array.length < 1) {
+        string = "";
+    } else if (array.length == 1) {
+        string = array[0]
+    } else {
+            for (let i = 0; i < array.length - 1; i++) {
+                string += array[i] + ",";
+        }
+        string += array[array.length - 1];
+    }    
+    return string
 }
+
