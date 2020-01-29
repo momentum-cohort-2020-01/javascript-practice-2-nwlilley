@@ -164,9 +164,11 @@ function selectionSort(array) {
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
 
+
 function textList (array) {
-    let string
-    for (item of array) {
-        string = array.push(item)
-    }
+    let string= ""
+    if (array.length)
+    for (let i = 0; i < array.length; i++)
+        string += array[i] + ","
+        return string;
 }
