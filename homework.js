@@ -85,7 +85,7 @@ function sum(array) {
 function average(array) {
     let total = 0
     if (array.length > 0) {
-    for (let i = 0; i < array.length; i ++) {
+        for (let i = 0; i < array.length; i ++) {
         total += array[i]
     }
     return total/array.length;
@@ -94,6 +94,19 @@ function average(array) {
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+
+
+function minimum (array) {
+    let minValue = Infinity;
+    if (array.length > 0) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] < minValue) {
+                minValue = array[i];
+            }
+        }  
+        return minValue;
+    }
+}
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -108,6 +121,18 @@ function average(array) {
 // Create a function called selectionSort that takes an array of numbers and returns
 // a sorted array using the above technique.
 //
+
+function selectionSort(array) {
+    let copyArray = array.slice()
+    let orderedArray = []
+    while (copyArray.length > 0) {
+        let num = minimum(copyArray)
+        orderedArray.push(num)
+        copyArray.splice(copyArray.indexOf(num), 1)
+    }
+    return orderedArray;
+}
+
 // Note 1: You do not actually want to delete things from the original array. You
 // should copy it first. To copy an array, use the following code:
 //
@@ -119,8 +144,29 @@ function average(array) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
+// function selectionSort(array) {
+//     let arrayCopy = array.slice()
+//     let orderedArray = []
+//     for (let i = 0; i < arrayCopy.length; i++) {
+//         let minNum = minimum(arrayCopy)
+//         let minNumIndex = arrayCopy.indexOf(minNum)
+//         orderedArray.push(minNum)
+//         arrayCopy.splice(minNumIndex, 1)
+//     }
+//     return orderedArray;
+//  }
+
+
+
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+
+function textList (array) {
+    let string
+    for (item of array) {
+        string = array.push(item)
+    }
+}
